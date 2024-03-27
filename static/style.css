@@ -1,0 +1,28 @@
+body{
+    background-color:white ;
+}
+
+#title h1{
+    font-size:55px;
+    padding-bottom:30px;
+}
+
+#description{
+    font-size: 40px;
+    padding-top:20px;
+}
+
+.project-video{
+    max-width:1124px;
+    font-size:30px;
+    padding-bottom:70px;
+    padding-top:70px;
+}
+
+.analysis{
+    font-size: 40px;
+}
+
+.analysis h3{
+    font-size: 45px;
+}
