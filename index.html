@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Project 4</title>
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+
+    <body>
+        <div id="title">
+            <h1>Project 4: Traffic light frequency with YoloV7</h1>
+        </div>
+
+        <div id="description">
+            <p>I took a <a href="https://www.youtube.com/watch?v=OoRjUEPy8bc">free-to-use</a> dashcam video with 3242 frames and used the same YoloV7 framework
+            as in the last project. Below you will find the input video along with the labeled video and
+            an analysis.</p>
+        </div>
+
+        <div class="project-video">
+            <p>Original</p>
+            <video width="1124" height="696" controls>
+                <source src = "static/driving.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="project-video">
+            <p>Labeled</p>
+            <video width="1124" height="696" controls>
+                <source src = "static/driving_labeled.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="analysis">
+            <h3>Analysis</h3>
+            <p>
+                I often think about the proportion of the time I spend stuck at traffic lights when driving.
+                The experience is not something I, or many I know, look forward to. With YoloV7, I was able to count 
+                the number of frames in a 54-second driving time-lapse where a traffic light was detected.
+                Out of 3242 frames total, Yolo identified 1516 of them as having at least one traffic light in the frame.
+                That's about 47%. In most driving videos, if a traffic light is identified, that is an intersection you
+                could be stuck at. So the 47% acts as an upper bound on waiting time, since it doesn't distinguish by light color.
+                I watched the labeled video at 10 fps, and based on casual observation, there weren't any
+                false positives for this video. This can probably be attributed to the high resolution of the video.
+                <br>
+                <br>
+                Training Yolo or a similar model to recognize traffic lights can be a difficult problem because of false positives
+                (red traffic lights at night and at lower resolution can resemble brake lights) and false negatives (in the video
+                you can see that sometimes it is not until close to the light that it is identified). Also, humans tend to identify
+                traffic lights largely by context (carefully-designed stickers on the back of someone's car might be able to fool
+                YOLO, for example), so the inner workings of Yolo become pertinent. 
+                <br>
+                <br>
+                Training the model on data that allows a distinction between red and green lights, and even integrating motion-detection, could yield
+                valuable data about how traffic lights affect traffic. This could promote more efficient transportation infrastructure. For example,
+                this could help urban planners and traffic-estimation software save drivers time. For this to potentially happen, the accuracy of detection, including
+                handling edge cases, would need to be experimented with first.
+                <br>
+                <br>
+                Note: Videos on this website are 480p due to GitHub file-size restrictions, the original and locally-processed were at 1080p.
+            </p>
+        </div>
+    </body>
+</html>
